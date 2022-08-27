@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arvo&family=Dosis:wght@200;300;700&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans:wght@500;800&display=swap" rel="stylesheet">
+    <link href="/css/login.css" type="text/css" rel="stylesheet">
+    <title>Themis Clother Login</title>
+</head>
+<body>
+    <div class="top">
+        <a href="/"><h1>Themis Clothes</h1></a>
+    </div>
+<form action="/login" method="post">
+    <div class="welcome-back">
+        <h1>Welcome Back!</h1>
+        <label for="username">username</label>
+        <input id="username" name="username">
+        <label for="password">password</label>
+        <input id="password" name="password" type="password">
+        <button onclick="(()=> console.log('tried to loggin!'))()">Login</button>
+        <h4><%= (error) ? error : null %></h4>
+        <h3>Or</h3>
+        <hr>
+    </div>
+</form>
+<form action="/register" method="post">
+    <div class="welcome-back register">
+        <h1>Sign Up</h1>
+        <h4> <%= (message) ? message : null %> </h4>
+        <input id="user-register" name="username" placeholder="Username">
+        <input id="password-register" name="email" placeholder="email">
+        <input id="email-register" name="password" type="password" placeholder="password">
+        <button type="submit" onclick="(()=> console.log('tried to register!'))()">Register</button>
+    </div>
+</form>
+
+</body>
+</html>

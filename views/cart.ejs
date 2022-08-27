@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Arvo&family=Dosis:wght@200;300;700&family=Merriweather:ital@0;1&family=Space+Mono&family=Work+Sans:wght@500;800&display=swap" rel="stylesheet">
+    <link href="/css/login.css" type="text/css" rel="stylesheet">
+    <title>Themis Clother Login</title>
+</head>
+<body>
+    <div class="top">
+        <a href="/"><h1>Themis Clothes</h1></a>
+    </div>
+    <div class="checkout-title">Checkout</div>
+    <div class="checkout">
+        <div class="items-list">
+            <table class="table-list">
+                <tr>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+                <% if(data.items.length > 0) { %>
+                <% data.items.map((ele, indx) => { %>   
+                <tr>
+                    <td><%= ele.name %></td>
+                    <td><%= ele.qty %></td>
+                    <td>£<%= ele.subTotal %></td>
+                    <td><a href=<%= '/deleteItem/' + indx %> ><button id="delete-item"><img src="/img/1828843.png"></button></a></td>
+                </tr>
+                <% })}; %>
+            </table>
+        </div>
+        
+        <div class="welcome-back register">
+            <form action="/item/createOrder" method="post">
+            <h2>Total:</h2><h2 id="total">£<%= data.total %></h2>
+            <button onclick="(()=> console.log('tried to pay!'))()">Payment</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
